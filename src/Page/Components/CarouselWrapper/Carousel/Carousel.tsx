@@ -1,4 +1,4 @@
-import ChevronNext from "../../../../Components/Icons/Chevron/ChevronNext";
+/*import ChevronNext from "../../../../Components/Icons/Chevron/ChevronNext";
 import SliderWrapper from "../SliderWrapper/SliderWrapper";
 import styles from "./styles.module.scss";
 
@@ -44,4 +44,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Carousel;*/

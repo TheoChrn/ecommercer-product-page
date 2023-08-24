@@ -1,4 +1,4 @@
-import Carousel from "../Carousel/Carousel";
+/*import Carousel from "../Carousel/Carousel";
 
 const LightBox = () => {
   return (
@@ -11,4 +11,4 @@ const LightBox = () => {
   );
 };
 
-export default LightBox;
+export default LightBox;*/

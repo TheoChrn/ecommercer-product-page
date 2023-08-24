@@ -1,4 +1,4 @@
-import React, { ReactNode, createContext, useContext, useState } from "react";
+/*import React, { ReactNode, createContext, useContext, useState } from "react";
 
 interface Product {}
 
@@ -21,3 +21,4 @@ export const CarouselContextProvider = ({
 };
 
 export const useProductContext = () => useContext(CarouselContext);
+*/
