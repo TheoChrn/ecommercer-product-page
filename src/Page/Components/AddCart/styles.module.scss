@@ -1,0 +1,91 @@
+@import "../../../sass/Utils/Variables/variables";
+.cartManagement {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .addToCart,
+  .cartItems {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+  }
+  .cartItems {
+    justify-content: space-between;
+    background-color: $LightGrayishBblue;
+
+    span {
+      font-weight: 700;
+    }
+    .minusBtn,
+    .plusBtn {
+      cursor: pointer;
+    }
+    .minusBtn {
+      &--disabled {
+        cursor: none;
+        pointer-events: none;
+        svg {
+          use {
+            fill: $GrayishBlue;
+          }
+        }
+      }
+    }
+  }
+  .addToCart {
+    width: 100%;
+    height: 50px;
+    background-color: $Orange;
+
+    .addBtn {
+      cursor: pointer;
+      pointer-events: initial;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      gap: 20px;
+      svg {
+        path {
+          fill: white;
+        }
+      }
+      span {
+        font-weight: 700;
+        color: white;
+      }
+    }
+    &--disabled {
+      background-color: $LightGrayishBblue;
+
+      .addBtn {
+        pointer-events: none;
+        cursor: none;
+        svg {
+          path {
+            fill: black;
+          }
+        }
+        span {
+          color: black;
+        }
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cartManagement {
+    flex-direction: row;
+    .cartItems {
+      width: 40%;
+    }
+  }
+}

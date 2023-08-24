@@ -1,0 +1,86 @@
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes enterLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes leaveLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes enterRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leaveRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+$animationSpeed: 250ms;
+
+.sliderWrapper {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+
+  .leaveLeft {
+    animation: leaveLeft $animationSpeed forwards ease-out;
+  }
+
+  .leaveRight {
+    animation: leaveRight $animationSpeed forwards ease-out;
+  }
+
+  .enterRight {
+    animation: enterRight $animationSpeed forwards ease-out;
+  }
+  .enterLeft {
+    animation: enterLeft $animationSpeed forwards ease-out;
+  }
+
+  figure {
+    width: 100%;
+    flex-shrink: 0;
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+    &:nth-child(1) {
+      transform: translateX(100%);
+    }
+    &:nth-child(3) {
+      transform: translateX(-100%);
+    }
+  }
+}

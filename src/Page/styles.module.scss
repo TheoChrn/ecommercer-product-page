@@ -1,0 +1,68 @@
+@import "../sass/Utils/Variables/variables";
+@import "../sass/Utils/Mixins/mixins";
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    .productName {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      h1 {
+        color: $Orange;
+        letter-spacing: 0.2ch;
+      }
+      h2 {
+        line-height: 1.8ch;
+      }
+    }
+    .productDescription {
+      color: $DarkGrayishblue;
+    }
+    .productPriceWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .productPriceUpdate {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        span {
+          &:nth-child(1) {
+            font-weight: 700;
+            @include fluid-type(28, 48, 320, 1440);
+          }
+          &:nth-child(2) {
+            font-weight: 700;
+            color: $Orange;
+            background-color: $PaleOrange;
+            padding: 5px 10px;
+            border-radius: 7px;
+          }
+        }
+      }
+      .productPriceRaw {
+        span {
+          color: $GrayishBlue;
+          text-decoration: line-through;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 0 5%;
+    flex-direction: row;
+    gap: 5vw;
+  }
+}

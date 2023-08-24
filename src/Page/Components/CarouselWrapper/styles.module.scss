@@ -1,0 +1,139 @@
+@keyframes slideRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes enterLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes leaveLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes enterRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leaveRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+$animationSpeed: 250ms;
+
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .carousel {
+    position: relative;
+    aspect-ratio: 1.2/1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .sliderWrapper {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: 100%;
+
+      .leaveLeft {
+        animation: leaveLeft $animationSpeed forwards ease-out;
+      }
+
+      .leaveRight {
+        animation: leaveRight $animationSpeed forwards ease-out;
+      }
+
+      .enterRight {
+        animation: enterRight $animationSpeed forwards ease-out;
+      }
+      .enterLeft {
+        animation: enterLeft $animationSpeed forwards ease-out;
+      }
+
+      figure {
+        width: 100%;
+        flex-shrink: 0;
+
+        &:nth-child(1),
+        &:nth-child(3) {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+        }
+        &:nth-child(1) {
+          transform: translateX(100%);
+        }
+        &:nth-child(3) {
+          transform: translateX(-100%);
+        }
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+
+      &:nth-child(1) {
+        left: 15px;
+      }
+      &:nth-child(2) {
+        right: 15px;
+      }
+    }
+  }
+
+  .thumbnailsWrapper {
+    ul {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carouselWrapper {
+    max-height: 10%;
+    img {
+      border-radius: 15px;
+    }
+    .carousel {
+      .sliderWrapper {
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+}
