@@ -30,37 +30,39 @@ const CardToolTip = () => {
     <div className={styles.toolTipContainer}>
       <h3 className={styles.cartTitle}>Cart</h3>
       <div className={styles.productWrapper}>
-        {productQuantity !== 0 ? (
-          <div className={styles.productContent}>
-            <div className={styles.productDetails}>
-              <figure>
-                <img src={product.thumbnails[0]} alt="" />
-              </figure>
-              <div className={styles.productNameAndPrices}>
-                <h3>{product.name}</h3>
-                <div>
-                  <span
-                    className={styles.productPrice}
-                  >{`${product.currency}${formattedPrice} x ${productQuantity} `}</span>
-                  <span className={styles.totalPrice}>{`${
-                    product.currency
-                  }${calculTotal(
-                    parseInt(formattedPrice),
-                    productQuantity
-                  )}`}</span>
+        <div className={styles.productContent}>
+          {productQuantity !== 0 ? (
+            <>
+              <div className={styles.productDetails}>
+                <figure>
+                  <img src={product.thumbnails[0]} alt="" />
+                </figure>
+                <div className={styles.productNameAndPrices}>
+                  <h3>{product.name}</h3>
+                  <div>
+                    <span
+                      className={styles.productPrice}
+                    >{`${product.currency}${formattedPrice} x ${productQuantity} `}</span>
+                    <span className={styles.totalPrice}>{`${
+                      product.currency
+                    }${calculTotal(
+                      parseInt(formattedPrice),
+                      productQuantity
+                    )}`}</span>
+                  </div>
                 </div>
+                <button onClick={handleDeleteBtn} className={styles.deleteBtn}>
+                  <Bin />
+                </button>
               </div>
-              <button onClick={handleDeleteBtn} className={styles.deleteBtn}>
-                <Bin />
-              </button>
-            </div>
-            <div className={styles.productCheckout}>
-              <button>Checkout</button>
-            </div>
-          </div>
-        ) : (
-          <span>Your cart is empty.</span>
-        )}
+              <div className={styles.productCheckout}>
+                <button>Checkout</button>
+              </div>
+            </>
+          ) : (
+            <span>Your cart is empty.</span>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,47 @@
+@import "../../../../sass/Utils/Variables/variables";
+
+.thumbnailsWrapper {
+  height: 25%;
+  aspect-ratio: 2/1;
+  ul {
+    display: flex;
+    gap: 20px;
+
+    li {
+      border: solid 3px transparent;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 15px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      figure {
+        background-color: white;
+        height: 100%;
+
+        pointer-events: none;
+
+        img {
+          pointer-events: none;
+        }
+      }
+      &:hover {
+        figure {
+          img {
+            filter: opacity(0.3);
+          }
+        }
+      }
+    }
+
+    .selected {
+      border: solid 3px $Orange;
+
+      figure {
+        img {
+          filter: opacity(0.3);
+        }
+      }
+    }
+  }
+}

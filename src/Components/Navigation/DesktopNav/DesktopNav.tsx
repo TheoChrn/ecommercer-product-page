@@ -3,9 +3,11 @@ import logo from "../../../assets/images/logo.svg";
 import CardToolTip from "../../../Page/Components/CartToolTip/CardToolTip";
 import { useProductContext } from "../../../Contexte/ProductContext";
 import NavRightSide from "../NavRightSide/NavRightSide";
+import { useCarouselContext } from "../../../Contexte/CarouselContext";
 
 const DesktopNavigation = () => {
   const { displayToolTip } = useProductContext();
+  const { toggleLightBox } = useCarouselContext();
   return (
     <>
       <header className={styles.header}>
@@ -24,7 +26,11 @@ const DesktopNavigation = () => {
           </nav>
         </div>
         <NavRightSide />
-        {displayToolTip && <CardToolTip />}
+        {displayToolTip === true && toggleLightBox === false ? (
+          <CardToolTip />
+        ) : (
+          ""
+        )}
       </header>
     </>
   );

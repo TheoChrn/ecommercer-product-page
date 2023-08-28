@@ -17,13 +17,17 @@ main {
       h1 {
         color: $Orange;
         letter-spacing: 0.2ch;
+        @include fluid-type(12, 14, 320, 1440);
       }
       h2 {
         line-height: 1.8ch;
+        width: 15ch;
+        @include fluid-type(28, 44, 320, 1440);
       }
     }
     .productDescription {
       color: $DarkGrayishblue;
+      font-size: 16px;
     }
     .productPriceWrapper {
       display: flex;
@@ -37,9 +41,10 @@ main {
         span {
           &:nth-child(1) {
             font-weight: 700;
-            @include fluid-type(28, 48, 320, 1440);
+            font-size: 30px;
           }
           &:nth-child(2) {
+            font-size: 16px;
             font-weight: 700;
             color: $Orange;
             background-color: $PaleOrange;
@@ -53,6 +58,7 @@ main {
           color: $GrayishBlue;
           text-decoration: line-through;
           font-weight: 700;
+          font-size: 16px;
         }
       }
     }
@@ -61,8 +67,19 @@ main {
 
 @media screen and (min-width: 1024px) {
   main {
-    padding: 0 5%;
+    display: flex;
+    justify-content: space-evenly;
     flex-direction: row;
-    gap: 5vw;
+
+    .contentWrapper {
+      justify-content: center;
+      max-width: 470px;
+
+      .productPriceWrapper {
+        flex-direction: column;
+        gap: 5px;
+        align-items: start;
+      }
+    }
   }
 }

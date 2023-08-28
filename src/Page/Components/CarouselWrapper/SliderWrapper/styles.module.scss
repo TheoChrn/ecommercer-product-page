@@ -84,3 +84,9 @@ $animationSpeed: 250ms;
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .sliderWrapper {
+    border-radius: 15px;
+  }
+}

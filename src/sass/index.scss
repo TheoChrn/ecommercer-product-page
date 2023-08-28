@@ -14,7 +14,7 @@ span {
 
 @media screen and (min-width: 1024px) {
   #root {
-    padding: 0 5%;
+    padding: 0 max(min(120px, calc((100% - 1024px) / 2)), 20px);
     gap: 10vh;
   }
 }
@@ -22,7 +22,7 @@ span {
 header,
 main {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
 }
 
 * {
@@ -32,26 +32,26 @@ main {
 }
 
 li {
+  cursor: pointer;
   text-decoration: none;
   list-style-type: none;
 }
 
 button {
+  cursor: pointer;
   outline: none;
   background-color: inherit;
   border: none;
 }
 
 h1 {
-  @include fluid-type(14, 22, 320, 1440);
+  @include fluid-type(14, 14, 320, 1440);
 }
 
-h2 {
-  @include fluid-type(28, 48, 320, 1440);
-}
-
-main {
-  height: fit-content;
+@media screen and (min-width: 1024px) {
+  main {
+    height: 500px;
+  }
 }
 
 img {

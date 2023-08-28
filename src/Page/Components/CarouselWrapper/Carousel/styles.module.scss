@@ -1,0 +1,48 @@
+.carousel {
+  position: relative;
+  aspect-ratio: 1.2/1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .prevBtn,
+  .nextBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+
+    &:hover {
+      svg {
+        path {
+          stroke: #ff7e1b;
+        }
+      }
+    }
+  }
+
+  .prevBtn {
+    left: 15px;
+  }
+  .nextBtn {
+    right: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel {
+    height: 75%;
+    aspect-ratio: 1/1;
+    .prevBtn {
+      left: -25px;
+    }
+    .nextBtn {
+      right: -25px;
+    }
+  }
+}

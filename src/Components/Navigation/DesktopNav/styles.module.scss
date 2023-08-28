@@ -1,30 +1,59 @@
+@import "../../../sass/Utils/Variables/variables";
+
 .header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 0;
+  height: 110px;
   border-bottom: solid 1px black;
   .leftSide {
     display: flex;
     align-items: center;
     gap: 70px;
+    height: 100%;
   }
 
   .navigation {
-    height: fit-content;
     color: black;
+    height: 100%;
     font-weight: 700;
 
     ul {
-      align-items: center;
+      height: 100%;
       display: flex;
       gap: 20px;
     }
 
     li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      position: relative;
       color: grey;
       font-weight: 400;
+      font-size: 16px;
+
+      &:hover {
+        color: black;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: $Orange;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::before {
+        transform: scaleX(1);
+      }
     }
   }
 }

@@ -69,16 +69,16 @@
   }
 }
 
-$fadeSpeed: 250ms;
+$fadeSpeed: 200ms;
 $firstDelaySpeed: 800ms;
-$firstDelaySpeedLeave: 600ms;
 
 .header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  height: 70px;
+  padding: 0 25px;
   .leftSide {
     display: flex;
     align-items: center;
@@ -99,6 +99,11 @@ $firstDelaySpeedLeave: 600ms;
       background-color: white;
       height: 100%;
       .closeMenuBtn {
+        svg {
+          path {
+            fill: black;
+          }
+        }
       }
 
       .navigation {
@@ -141,22 +146,16 @@ $firstDelaySpeedLeave: 600ms;
     &--LeaveAnimation {
       display: block;
 
-      animation: BackgroundFadeOut 2000ms forwards ease-out;
+      animation: BackgroundFadeOut 1000ms forwards ease-out;
       * {
         pointer-events: none;
       }
       .asideNav {
-        animation: SlideLeft 500ms 1000ms forwards ease-out;
+        animation: SlideLeft 500ms forwards ease-out;
         .navigation {
           ul {
             li {
               opacity: 1;
-              animation: SlideUp $fadeSpeed forwards ease-out;
-              @for $i from 1 through 5 {
-                &:nth-child(#{$i}) {
-                  animation-delay: ($firstDelaySpeed * (5 - $i)) * 0.2 !important;
-                }
-              }
             }
           }
         }
