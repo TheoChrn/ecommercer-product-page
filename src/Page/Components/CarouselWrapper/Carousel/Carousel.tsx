@@ -81,7 +81,6 @@ const Carousel = () => {
         setImages();
         setLeaveAnimation("");
         setEnterAnimation("");
-        console.log("finTimeOut");
       }, 300);
 
       return () => clearTimeout(timeoutId);
